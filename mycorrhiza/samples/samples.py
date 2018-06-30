@@ -15,5 +15,9 @@ class Sample:
 	def num_loci(self):
 		return self._num_loci
 
+	@property
+	def population(self):
+		return self._population
+
 
 

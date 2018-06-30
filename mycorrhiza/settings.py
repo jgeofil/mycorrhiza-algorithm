@@ -1,0 +1,1 @@
+SPLITSTREE_PATH = '/home/jeremy/soft/splitstree4/SplitsTree'
