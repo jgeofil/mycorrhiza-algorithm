@@ -88,7 +88,7 @@ def _averaged_random_forests(partitions: list, populations: list, num_splits: in
 
 	indices = np.argsort(ordering_out)
 
-	return np.array(predicted_origin_out)[indices], np.array(mixture_estimate_out)[indices]
+	return np.array(predicted_origin_out)[indices], np.array(mixture_estimate_out)[indices], np.sort(np.unique(populations))
 
 
 def cross_validate(data: Loader,
