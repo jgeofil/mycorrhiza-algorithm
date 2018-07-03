@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from mycorrhiza.mycorrhiza.load.load import Loader
+from ..load.load import Loader
 
 
 class Result:

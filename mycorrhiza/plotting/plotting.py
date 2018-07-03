@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-from typing import List
 from ..analysis.result import Result
 import numpy as np
 
