@@ -7,7 +7,7 @@ setuptools.setup(
     name="mycorrhiza",
     version="0.0.1",
     author="Jeremy Georges-Filteau",
-    author_email="jeremy.geo@gmail.com",
+    author_email="jeremy.georges-filteau@mail.mcgill.ca",
     description="Mycorrhiza population assignment tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",
