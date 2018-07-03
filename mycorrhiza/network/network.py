@@ -1,5 +1,5 @@
-from mycorrhiza.mycorrhiza.load import nexus
-from mycorrhiza.mycorrhiza.settings import SPLITSTREE_PATH
+from ..load import nexus
+from ..settings import SPLITSTREE_PATH
 import subprocess
 import os
 import numpy as np

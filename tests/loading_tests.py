@@ -1,7 +1,13 @@
 
-from mycorrhiza.mycorrhiza.load.myco import Myco
-from mycorrhiza.mycorrhiza.analysis.crossvalidate import CrossValidate
-from mycorrhiza.mycorrhiza.plotting.plotting import mixture_plot
+from mycorrhiza.load.myco import Myco
+from mycorrhiza.analysis.crossvalidate import CrossValidate
+from mycorrhiza.plotting.plotting import mixture_plot
+'''
+from mycorrhizaloc.mycorrhiza.load.myco import Myco
+from mycorrhizaloc.mycorrhiza.analysis.crossvalidate import CrossValidate
+from mycorrhizaloc.mycorrhiza.plotting.plotting import mixture_plot
+'''
+
 
 myco = Myco('examples/gipsy.myc')
 myco.load()

@@ -6,7 +6,7 @@ from tqdm import tqdm
 import numpy as np
 import random
 from pathos.multiprocessing import Pool
-from ..splits.splits import SplitNetwork
+from mycorrhiza.network.network import SplitNetwork
 from sklearn.model_selection import KFold
 from sklearn.ensemble import RandomForestClassifier
 from .result import Result
