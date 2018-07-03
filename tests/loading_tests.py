@@ -1,8 +1,11 @@
-import unittest
+
 from mycorrhiza.mycorrhiza.load.myco import Myco
-from mycorrhiza.mycorrhiza.analysis.crossvalidate import cross_validate
+from mycorrhiza.mycorrhiza.analysis.crossvalidate import CrossValidate
+from mycorrhiza.mycorrhiza.plotting.plotting import mixture_plot
 
 myco = Myco('examples/gipsy.myc')
 myco.load()
 
-pred_pop, mixture = cross_validate(myco, 'examples/', n_partitions=1, n_loci=0, n_cores=4)
+cv = CrossValidate(myco, 'examples/').run(n_partitions=1, n_loci=0, n_cores=4)
+
+mixture_plot(cv)
