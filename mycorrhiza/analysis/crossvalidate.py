@@ -9,6 +9,7 @@ from pathos.multiprocessing import Pool
 from ..splits.splits import SplitNetwork
 from sklearn.model_selection import KFold
 from sklearn.ensemble import RandomForestClassifier
+from .result import Result
 
 
 def _as_nexus_file(data: Loader, out_path, loci: list):
@@ -60,7 +61,7 @@ def _partition(data: Loader, out_path, num_partitions: int, num_loci: int, num_c
 	return p.map(func, part_files)
 
 
-def _averaged_random_forests(partitions: list, populations: list, num_splits: int, num_estimators: int, num_cores: int):
+def _r_forests(partitions: list, populations: list, num_splits: int, num_estimators: int, num_cores: int):
 	kf = KFold(n_splits=num_splits, shuffle=True)
 
 	populations = np.array(populations)
@@ -88,16 +89,22 @@ def _averaged_random_forests(partitions: list, populations: list, num_splits: in
 
 	indices = np.argsort(ordering_out)
 
-	return np.array(predicted_origin_out)[indices], np.array(mixture_estimate_out)[indices], np.sort(np.unique(populations))
+	return np.array(predicted_origin_out)[indices], np.array(mixture_estimate_out)[indices], list(np.sort(np.unique(populations)))
+
+class CrossValidate(Result):
+
+	def __int__(self, dataset: Loader, out_path):
+		super().__init__(dataset, out_path)
+
+	def run(self, n_partitions: int=1, n_loci: int=0, n_splits: int=5, n_estimators: int=60, n_cores: int=1) -> Result:
+
+		parts = _partition(self._dataset, self._out_path, n_partitions, n_loci, n_cores)
+		pred_pops, q, q_pops = _r_forests(parts, self._dataset.populations, n_splits, n_estimators, n_cores)
+
+		self.set_pred_pops(pred_pops)
+		self.set_q(q)
+		self.set_q_pops(q_pops)
+
+		return self
 
 
-def cross_validate(data: Loader,
-					out_path,
-					n_partitions: int=1,
-					n_loci: int=0,
-					n_splits: int=5,
-					n_estimators: int=60,
-					n_cores: int=1):
-
-	parts = _partition(data, out_path, n_partitions, n_loci, n_cores)
-	return _averaged_random_forests(parts, data.populations, n_splits, n_estimators, n_cores)
