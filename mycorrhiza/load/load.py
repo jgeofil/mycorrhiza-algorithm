@@ -59,4 +59,8 @@ class Loader:
 	def populations(self):
 		return [sample.population for sample in self._samples]
 
+	@property
+	def identifiers(self):
+		return [sample.identifier for sample in self._samples]
+
 
