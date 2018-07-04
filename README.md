@@ -44,6 +44,7 @@ I you wish to specify a different path for the SplitsTree executable you can do 
  
     ```
 3. Load some data. Here data is loaded in the Mycorrhiza format from the Gipsy moth sample data file.
+	Example data can be found [here](https://github.com/jgeofil/mycorrhiza/tree/master/examples/data).
 
     ```python
     myco = Myco('examples/gipsy.myc')
