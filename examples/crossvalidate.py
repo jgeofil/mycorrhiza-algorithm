@@ -1,5 +1,3 @@
-
-
 from mycorrhiza.dataset import Myco
 from mycorrhiza.analysis import CrossValidate
 from mycorrhiza.plotting import mixture_plot
