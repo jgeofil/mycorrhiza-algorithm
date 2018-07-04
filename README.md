@@ -47,15 +47,15 @@ I you wish to specify a different path for the SplitsTree executable you can do 
 	Example data can be found [here](https://github.com/jgeofil/mycorrhiza/tree/master/examples/data).
 
     ```python
-    myco = Myco('examples/gipsy.myc')
+    myco = Myco(file_path='data/gipsy.myc')
     myco.load()
- 
     ```
 
 4. Run an analysis. Here a simple 5-fold cross-validation analysis is executed.
 
     ```python
-    cv = CrossValidate(myco, 'examples/').run(n_partitions=1, n_loci=0, n_cores=4)
+    cv = CrossValidate(dataset=myco, out_path='data/')
+	cv.run(n_partitions=1, n_loci=0, n_splits=5, n_estimators=60, n_cores=1)
     ```
     
 5. Plot the results.
