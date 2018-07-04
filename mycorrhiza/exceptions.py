@@ -1,2 +1,0 @@
-class LoadingError(Exception):
-	pass
