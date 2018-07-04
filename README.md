@@ -62,3 +62,7 @@ I you wish to specify a different path for the SplitsTree executable you can do 
     ```python
     mixture_plot(cv)
     ```
+    
+## Documentation
+
+[https://jgeofil.github.io/mycorrhiza/](https://jgeofil.github.io/mycorrhiza/)
