@@ -1,7 +1,7 @@
 # Mycorrhiza
 Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
 
-##Installing Mycorrhiza with pip
+## Installing Mycorrhiza with pip
 
 1. Make sure you have the latest version of Python 3.x
 
@@ -26,7 +26,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     Installation executables for SplitsTree4 can be 
     found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
     
-##Running an analysis
+## Running an analysis
 
 1. Import the necessary modules.
     
