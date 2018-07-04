@@ -1,11 +1,11 @@
 import numpy as np
 from typing import List
-from ..load.load import Loader
+from ..dataset.dataset import Dataset
 
 
 class Result:
 
-	def __init__(self, dataset: Loader, out_path):
+	def __init__(self, dataset: Dataset, out_path):
 
 		self._out_path = out_path
 		self._q_matrix = None

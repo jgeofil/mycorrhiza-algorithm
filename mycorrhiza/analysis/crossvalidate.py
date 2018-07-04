@@ -1,18 +1,18 @@
-from ..load.load import Loader
-from ..load import nexus
+from ..dataset.dataset import Dataset
+from ..dataset import nexus
 from ..helper import random_string
 import os
 from tqdm import tqdm
 import numpy as np
 import random
 from pathos.multiprocessing import Pool
-from mycorrhiza.network.network import SplitNetwork
+from ..network.network import SplitNetwork
 from sklearn.model_selection import KFold
 from sklearn.ensemble import RandomForestClassifier
 from .result import Result
 
 
-def _as_nexus_file(data: Loader, out_path, loci: list):
+def _as_nexus_file(data: Dataset, out_path, loci: list):
 
 		temp = random_string(32)+'.nex'
 		temp_file = os.path.join(out_path, temp)
@@ -35,7 +35,7 @@ def _as_nexus_file(data: Loader, out_path, loci: list):
 		return temp_file
 
 
-def _partition(data: Loader, out_path, num_partitions: int, num_loci: int, num_cores: int):
+def _partition(data: Dataset, out_path, num_partitions: int, num_loci: int, num_cores: int):
 
 	if num_loci == 0:
 		loci = range(data.num_loci)
@@ -93,7 +93,7 @@ def _r_forests(partitions: list, populations: list, num_splits: int, num_estimat
 
 class CrossValidate(Result):
 
-	def __int__(self, dataset: Loader, out_path):
+	def __int__(self, dataset: Dataset, out_path):
 		super().__init__(dataset, out_path)
 
 	def run(self, n_partitions: int=1, n_loci: int=0, n_splits: int=5, n_estimators: int=60, n_cores: int=1) -> Result:

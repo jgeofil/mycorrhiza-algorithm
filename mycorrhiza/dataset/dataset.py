@@ -2,7 +2,7 @@ from ..samples.samples import Sample
 from ..exceptions import LoadingError
 
 
-class Loader:
+class Dataset:
 
 	def __init__(self, file_path, diploid: bool=True):
 

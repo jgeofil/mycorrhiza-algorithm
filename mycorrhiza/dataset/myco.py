@@ -1,8 +1,8 @@
 from ..samples.samples import Sample
 from ..exceptions import LoadingError
-from .load import Loader
+from .dataset import Dataset
 
-class Myco(Loader):
+class Myco(Dataset):
 
 	def __init__(self, file_path, diploid: bool=True):
 		super().__init__(file_path, diploid)

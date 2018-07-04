@@ -1,5 +1,5 @@
-from ..load import nexus
-from ..settings import SPLITSTREE_PATH
+from ..dataset import nexus
+from ..settings import const
 import subprocess
 import os
 import numpy as np
@@ -34,7 +34,7 @@ class SplitNetwork:
 
 
 def bash_nexus_file(filename):
-	bash_command = '{0} -g -v -i {1}'.format(SPLITSTREE_PATH, filename)
+	bash_command = '{0} -g -v -i {1}'.format(const['__SPLITSTREE_PATH__'], filename)
 
 	process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
 	output, error = process.communicate()
@@ -43,3 +43,4 @@ def bash_nexus_file(filename):
 		raise RuntimeError(error)
 	else:
 		return True
+
