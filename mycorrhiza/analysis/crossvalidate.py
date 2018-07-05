@@ -102,8 +102,9 @@ class CrossValidate(Result):
 		pred_pops, q, q_pops = _r_forests(parts, self._dataset.populations, n_splits, n_estimators, n_cores)
 
 		self.set_pred_pops(pred_pops)
-		self.set_q(q)
-		self.set_q_pops(q_pops)
+		self.set_q(q, q_pops)
+
+		self.output_q()
 
 		return self
 
