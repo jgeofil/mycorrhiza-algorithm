@@ -1,0 +1,12 @@
+The Dataset API reference
+=============================
+
+.. automodule:: mycorrhiza.dataset.Myco
+:members:
+The “shape” module
+------------------
+
+.. automodule:: mycorrhiza.dataset.Structure
+:members:
+The “utils” module
+------------------
