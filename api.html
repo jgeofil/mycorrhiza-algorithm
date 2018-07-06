@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Dataset API reference &#8212; mycorrhiza  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Mycorrhiza documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-dataset-api-reference">
+<h1>The Dataset API reference<a class="headerlink" href="#the-dataset-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-myco-file-reader-class">
+<h2>The “Myco” file reader class<a class="headerlink" href="#the-myco-file-reader-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.dataset.Myco">
+<em class="property">class </em><code class="descclassname">mycorrhiza.dataset.</code><code class="descname">Myco</code><span class="sig-paren">(</span><em>file_path</em>, <em>diploid: bool = True</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.dataset.Myco" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mycorrhiza formatted file reader.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<em>str</em>) – Path to the file containing the data.</li>
+<li><strong>diploid</strong> (<em>bool</em>) – Dilpoid genotypes occupy 2 rows.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="the-structure-file-reader-class">
+<h2>The “Structure” file reader class<a class="headerlink" href="#the-structure-file-reader-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.dataset.Structure">
+<em class="property">class </em><code class="descclassname">mycorrhiza.dataset.</code><code class="descname">Structure</code><span class="sig-paren">(</span><em>file_path: str</em>, <em>diploid: bool = True</em>, <em>n_optional_cols: int = 0</em>, <em>missing='-9'</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.dataset.Structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure formatted file reader.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file_path</strong> (<em>str</em>) – Path to the file containing the data.</li>
+<li><strong>diploid</strong> (<em>bool</em>) – Dilpoid genotypes occupy 2 rows.</li>
+<li><strong>n_optional_cols</strong> (<em>int</em>) – Number of columns to ignore after the third column.</li>
+<li><strong>missing</strong> – Representation of missing data.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="file-conversions">
+<h2>File conversions<a class="headerlink" href="#file-conversions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mycorrhiza.dataset.vcf_to_structure">
+<code class="descclassname">mycorrhiza.dataset.</code><code class="descname">vcf_to_structure</code><span class="sig-paren">(</span><em>path_in: str</em>, <em>path_out: str</em>, <em>populations: list</em>, <em>diploid: bool = True</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.dataset.vcf_to_structure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a VCF file into the STRUCTURE format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path_in</strong> (<em>str</em>) – Path to the VCF file containing the data.</li>
+<li><strong>path_out</strong> (<em>str</em>) – Output file, where the result will be written.</li>
+<li><strong>populations</strong> (<em>list</em>) – List of population labels for the samples in the VCF file, <em>in the same order</em>.</li>
+<li><strong>diploid</strong> (<em>bool</em>) – If the samples are diploid.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Mycorrhiza documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jeremy Georges-Filteau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

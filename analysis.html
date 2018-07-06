@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Running analyses and plotting results &#8212; mycorrhiza  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Reading and converting data formats" href="data.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="running-analyses-and-plotting-results">
+<h1>Running analyses and plotting results<a class="headerlink" href="#running-analyses-and-plotting-results" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-cross-validation-analysis-class">
+<h2>The cross-validation analysis class<a class="headerlink" href="#the-cross-validation-analysis-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.analysis.CrossValidate">
+<em class="property">class </em><code class="descclassname">mycorrhiza.analysis.</code><code class="descname">CrossValidate</code><span class="sig-paren">(</span><em>dataset: mycorrhiza.dataset.dataset.Dataset</em>, <em>out_path: str</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.CrossValidate" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="mycorrhiza.analysis.CrossValidate.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>dataset: mycorrhiza.dataset.dataset.Dataset</em>, <em>out_path: str</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.CrossValidate.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs Mycorrhiza with k-fold cross-validation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dataset</strong> (<em>Dataset</em>) – Dataset on which to run the analysis.</li>
+<li><strong>out_path</strong> (<em>str</em>) – Path to output folder.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="mycorrhiza.analysis.CrossValidate.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>n_partitions: int = 1</em>, <em>n_loci: int = 0</em>, <em>n_splits: int = 5</em>, <em>n_estimators: int = 60</em>, <em>n_cores: int = 1</em><span class="sig-paren">)</span> &#x2192; mycorrhiza.analysis.result.Result<a class="headerlink" href="#mycorrhiza.analysis.CrossValidate.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the analysis with specified parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_partitions</strong> (<em>int</em>) – Number of partitions in which to divide the loci sequentially.</li>
+<li><strong>n_loci</strong> (<em>int</em>) – Number of randomly selected loci to use (0 for all loci).</li>
+<li><strong>n_splits</strong> (<em>int</em>) – Number of cross-validation splits.</li>
+<li><strong>n_estimators</strong> (<em>int</em>) – Number of trees in the Random Forest classifier.</li>
+<li><strong>n_cores</strong> (<em>int</em>) – Number of cores.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="the-result-class">
+<h2>The result class<a class="headerlink" href="#the-result-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.analysis.Result">
+<em class="property">class </em><code class="descclassname">mycorrhiza.analysis.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>dataset: mycorrhiza.dataset.dataset.Dataset</em>, <em>out_path</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.Result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="mycorrhiza.plotting.mixture_plot">
+<code class="descclassname">mycorrhiza.plotting.</code><code class="descname">mixture_plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.plotting.mixture_plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="data.html" title="previous chapter">Reading and converting data formats</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jeremy Georges-Filteau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/analysis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

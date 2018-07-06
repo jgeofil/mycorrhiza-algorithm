@@ -1,0 +1,19 @@
+The Dataset API reference
+=============================
+
+The “Myco” file reader class
+----------------------------
+
+.. autoclass:: mycorrhiza.dataset.Myco
+   :members: __init__
+
+The “Structure” file reader class
+---------------------------------
+
+.. autoclass:: mycorrhiza.dataset.Structure
+   :members: __init__
+
+File conversions
+---------------------------------
+
+.. autofunction:: mycorrhiza.dataset.vcf_to_structure
