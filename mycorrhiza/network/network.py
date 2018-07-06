@@ -4,7 +4,6 @@ import subprocess
 import os
 import numpy as np
 
-
 class SplitNetwork:
 
 	def __init__(self):
@@ -21,7 +20,7 @@ class SplitNetwork:
 	def getSplitsMatrix(self):
 		return np.array(self._splits).T
 
-	def execute_nexus_file(self, filename, delete_file=True):
+	def execute_nexus_file(self, filename, delete_file=False):
 		print('Building network from file {0}'.format(filename))
 		bash_nexus_file(filename)
 
@@ -35,6 +34,8 @@ class SplitNetwork:
 
 def bash_nexus_file(filename):
 	bash_command = '{0} -g -v -i {1}'.format(const['__SPLITSTREE_PATH__'], filename)
+
+	print(bash_command)
 
 	process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
 	output, error = process.communicate()

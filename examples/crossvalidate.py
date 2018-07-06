@@ -1,4 +1,4 @@
-from mycorrhiza.dataset import Myco
+from mycorrhiza.dataset import Myco, Structure
 from mycorrhiza.analysis import CrossValidate
 from mycorrhiza.plotting import mixture_plot
 

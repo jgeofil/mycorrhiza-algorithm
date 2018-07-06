@@ -51,7 +51,8 @@ I you wish to specify a different path for the SplitsTree executable you can do 
     myco.load()
     ```
 
-4. Run an analysis. Here a simple 5-fold cross-validation analysis is executed.
+4. Run an analysis. Here a simple 5-fold cross-validation analysis is executed on all available loci,
+without partitioning.
 
     ```python
     cv = CrossValidate(dataset=myco, out_path='data/')
@@ -67,3 +68,30 @@ I you wish to specify a different path for the SplitsTree executable you can do 
 ## Documentation
 
 [https://jgeofil.github.io/mycorrhiza/](https://jgeofil.github.io/mycorrhiza/)
+
+
+## File formats
+
+### Myco
+
+Diploid genotypes occupy 2 rows (the sample identifier must be identical).
+
+| Column(s) | Content           | Type                       |
+| --------- | ----------------- | -------------------------- |
+| 1         | Sample identifier | string                     |
+| 2         | Population   	    | string or integer          |
+| 3         | Learning flag     | {0,1}                      |
+| 4 to M+3  | Loci	            | {A, T, G, C, N}            |
+
+### STRUCTURE
+
+Diploid genotypes occupy 2 rows (the sample identifier must be identical).
+
+| Column(s)     | Content           | Type                       |
+| ------------- | ----------------- | -------------------------- |
+| 1             | Sample identifier | string                     |
+| 2             | Population   	    | integer                    |
+| 3             | Learning flag     | {0,1}                      |
+| 4 to O+3      | Optional (Ignored)|                            |
+| O+3 to M+O+3  | Loci	            | integer or -9              |
+

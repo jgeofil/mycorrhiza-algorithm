@@ -18,14 +18,14 @@ def writeDistancesBlock(f, distances, taxa):
 	writeMatrixWithLabels(f, distances, taxa)
 	f.write('END; [Distances]\n')
 
-
+'''
 def writeCharactersBlock(f, characters, taxa):
 	f.write('BEGIN Characters;\n')
 	f.write('DIMENSIONS nchar=' + str(len(characters[0])) + ';\n')
 	f.write('FORMAT datatype=dna missing=N transpose=no interleave=no;\n')
 	writeMatrix(f, characters, taxa)
 	f.write('END; [Characters]\n')
-
+'''
 
 def start_characters_block(f, num_loci):
 	f.write('BEGIN Characters;\n')
