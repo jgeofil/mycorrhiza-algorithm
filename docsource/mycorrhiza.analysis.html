@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mycorrhiza.analysis package &#8212; mycorrhiza  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mycorrhiza-analysis-package">
+<h1>mycorrhiza.analysis package<a class="headerlink" href="#mycorrhiza-analysis-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-mycorrhiza.analysis.crossvalidate">
+<span id="mycorrhiza-analysis-crossvalidate-module"></span><h2>mycorrhiza.analysis.crossvalidate module<a class="headerlink" href="#module-mycorrhiza.analysis.crossvalidate" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.analysis.crossvalidate.CrossValidate">
+<em class="property">class </em><code class="descclassname">mycorrhiza.analysis.crossvalidate.</code><code class="descname">CrossValidate</code><span class="sig-paren">(</span><em>dataset: mycorrhiza.dataset.dataset.Dataset</em>, <em>out_path</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.crossvalidate.CrossValidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mycorrhiza.analysis.result.Result" title="mycorrhiza.analysis.result.Result"><code class="xref py py-class docutils literal"><span class="pre">mycorrhiza.analysis.result.Result</span></code></a></p>
+<dl class="method">
+<dt id="mycorrhiza.analysis.crossvalidate.CrossValidate.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>n_partitions: int = 1</em>, <em>n_loci: int = 0</em>, <em>n_splits: int = 5</em>, <em>n_estimators: int = 60</em>, <em>n_cores: int = 1</em><span class="sig-paren">)</span> &#x2192; mycorrhiza.analysis.result.Result<a class="headerlink" href="#mycorrhiza.analysis.crossvalidate.CrossValidate.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mycorrhiza.analysis.result">
+<span id="mycorrhiza-analysis-result-module"></span><h2>mycorrhiza.analysis.result module<a class="headerlink" href="#module-mycorrhiza.analysis.result" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="mycorrhiza.analysis.result.Result">
+<em class="property">class </em><code class="descclassname">mycorrhiza.analysis.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>dataset: mycorrhiza.dataset.dataset.Dataset</em>, <em>out_path</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.result.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="mycorrhiza.analysis.result.Result.identifiers">
+<code class="descname">identifiers</code><a class="headerlink" href="#mycorrhiza.analysis.result.Result.identifiers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mycorrhiza.analysis.result.Result.output_q">
+<code class="descname">output_q</code><span class="sig-paren">(</span><em>file_name: str = 'Q'</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.result.Result.output_q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mycorrhiza.analysis.result.Result.pred_populations">
+<code class="descname">pred_populations</code><a class="headerlink" href="#mycorrhiza.analysis.result.Result.pred_populations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mycorrhiza.analysis.result.Result.q_matrix">
+<code class="descname">q_matrix</code><a class="headerlink" href="#mycorrhiza.analysis.result.Result.q_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mycorrhiza.analysis.result.Result.q_populations">
+<code class="descname">q_populations</code><a class="headerlink" href="#mycorrhiza.analysis.result.Result.q_populations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="mycorrhiza.analysis.result.Result.real_populations">
+<code class="descname">real_populations</code><a class="headerlink" href="#mycorrhiza.analysis.result.Result.real_populations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mycorrhiza.analysis.result.Result.set_pred_pops">
+<code class="descname">set_pred_pops</code><span class="sig-paren">(</span><em>pops: typing.List</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.result.Result.set_pred_pops" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mycorrhiza.analysis.result.Result.set_q">
+<code class="descname">set_q</code><span class="sig-paren">(</span><em>q: typing.List[typing.List], col_pops: typing.List</em><span class="sig-paren">)</span><a class="headerlink" href="#mycorrhiza.analysis.result.Result.set_q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-mycorrhiza.analysis">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mycorrhiza.analysis" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jeremy Georges-Filteau.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="../_sources/docsource/mycorrhiza.analysis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
