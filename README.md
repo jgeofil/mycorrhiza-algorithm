@@ -33,10 +33,10 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ```python
     from mycorrhiza.dataset import Myco
     from mycorrhiza.analysis import CrossValidate
-    from mycorrhiza.plotting.plotting import mixture_plot
+    from mycorrhiza.plotting import mixture_plot
     ```
 2. (Optional) By default Mycorrhiza will look for SplitStree in your PATH. 
-I you wish to specify a different path for the SplitsTree executable you can do so in the settings module.
+If you wish to specify a different path for the SplitsTree executable you can do so in the settings module.
 
     ```python
     from mycorrhiza.settings import const
