@@ -1,2 +1,3 @@
 from .crossvalidate import CrossValidate
-from .crossvalidate import Result
+from .analysis import Result
+from .supervised import Supervised

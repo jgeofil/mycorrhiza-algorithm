@@ -1,5 +1,5 @@
 from matplotlib import pyplot as plt
-from ..analysis.result import Result
+from ..analysis import Result
 import numpy as np
 
 import warnings
