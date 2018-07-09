@@ -5,7 +5,6 @@ import os
 from tqdm import tqdm
 import numpy as np
 import random
-from pathos.multiprocessing import Pool
 from ..network.network import SplitNetwork
 from sklearn.model_selection import KFold
 from sklearn.ensemble import RandomForestClassifier
@@ -53,12 +52,7 @@ def _partition(data: Dataset, out_path, num_partitions: int, num_loci: int, num_
 
 	sn = SplitNetwork()
 
-	def func(file):
-		return sn.execute_nexus_file(file)
-
-	p = Pool(num_cores)
-
-	return p.map(func, part_files)
+	return map(sn.execute_nexus_file, part_files)
 
 
 def _r_forests(partitions: list, populations: list, num_splits: int, num_estimators: int, num_cores: int):
