@@ -1,4 +1,4 @@
-from ..samples.samples import Sample
+from .dataset import Sample
 from ..exceptions import LoadingError
 from .dataset import Dataset
 

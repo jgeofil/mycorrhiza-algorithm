@@ -1,7 +1,6 @@
-from ..samples.samples import Sample
+from .dataset import Sample
 from ..exceptions import LoadingError
 from .dataset import Dataset
-from string import ascii_uppercase
 
 DNA_INT = {'0': 'A'}
 

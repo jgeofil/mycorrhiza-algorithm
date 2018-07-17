@@ -1,5 +1,29 @@
-from ..samples.samples import Sample
 from ..exceptions import LoadingError
+
+
+class Sample:
+
+	def __init__(self, identifier: str, num_loci: int, population=None, known: bool = True):
+		self._identifier = str(identifier)
+		self._population = population
+		self._known = known
+		self._num_loci = num_loci
+
+	@property
+	def identifier(self):
+		return self._identifier
+
+	@property
+	def num_loci(self):
+		return self._num_loci
+
+	@property
+	def population(self):
+		return self._population
+
+	@property
+	def flag(self):
+		return self._known
 
 
 class Dataset:
@@ -62,5 +86,9 @@ class Dataset:
 	@property
 	def identifiers(self):
 		return [sample.identifier for sample in self._samples]
+
+	@property
+	def flags(self):
+		return [sample.flag for sample in self._samples]
 
 
