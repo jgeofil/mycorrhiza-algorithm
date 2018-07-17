@@ -32,22 +32,21 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 ## Running an analysis from command line
 
-    ```
+    
     mycocv -i [input-file-path] -o [output-folder-path]
-
-    ```
+    
 
     For more information about the parameters.
 
-    ```
+    
     mycocv -h
-
-    ```
+    
 
     It may be necessary to add your home folder to the PATH.
-    ```
+    
+    
     PATH="$HOME/.local/bin/:$PATH"
-    ```
+    
 
 
 ## Running an analysis in a script
