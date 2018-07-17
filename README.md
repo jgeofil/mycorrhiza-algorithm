@@ -25,8 +25,32 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
     Installation executables for SplitsTree4 can be 
     found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
-    
-## Running an analysis
+
+5. Install Matplotlib
+
+    Instructions can be found [here](https://matplotlib.org/users/installing.html).
+
+## Running an analysis from command line
+
+    ```
+    mycocv -i [input-file-path] -o [output-folder-path]
+
+    ```
+
+    For more information about the parameters.
+
+    ```
+    mycocv -h
+
+    ```
+
+    It may be necessary to add your home folder to the PATH.
+    ```
+    PATH="$HOME/.local/bin/:$PATH"
+    ```
+
+
+## Running an analysis in a script
 
 1. Import the necessary modules.
     
