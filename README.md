@@ -6,7 +6,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 1. Install Docker
 
    Instructions can be found [here](https://docs.docker.com/install/).
-1. (Optional) [Give Docker root access](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
+1. (On linux, optional) [Give Docker root access](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
 
 2. Get the Mycorrhiza image.
    
@@ -16,14 +16,16 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 3. Run an analysis.
     
+    Example data can be found [here](https://github.com/jgeofil/mycorrhiza/tree/master/examples/data).
+    
     ```bash
-    sudo docker run -v [WORKING DIRECTORY]:/temp/ mycorrhiza crossvalidate -i /temp/[INPUT FILE] -o /temp
+    docker run -v [WORKING DIRECTORY]:/temp/ mycorrhiza crossvalidate -i /temp/[INPUT FILE] -o /temp
     ```
    
     For example, in a folder containing the input file gipsy.myc.
    
     ```bash
-    sudo docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
+    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
     ```
 
 ## Running an analysis in a script 
@@ -51,9 +53,9 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     Installation executables for SplitsTree4 can be 
     found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
 
-5. Install Anaconda
+5. Install matplotlib
 
-    Instructions can be found [here](https://www.anaconda.com/download/).
+    Instructions can be found [here](https://matplotlib.org/users/installing.html).
 
 ### Running an analysis in a script
 
