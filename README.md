@@ -1,7 +1,7 @@
 # Mycorrhiza
 Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
 
-## Running an analysis from command line
+## Running an analysis from command line (OPTION 1)
 
 1. Install Docker
 
@@ -27,6 +27,46 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ```bash
     docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
     ```
+
+
+## Running an analysis from command line (OPTION 2)
+
+1. Make sure you have the latest version of Python 3.x
+
+    ```bash
+    python --version
+    ```
+
+2. Install pip
+
+   https://pip.pypa.io/en/stable/installing/
+
+3. Install Mycorrhiza
+
+    ```bash
+    pip3 install --upgrade mycorrhiza
+    ```
+
+4. Install SplitsTree
+
+    Installation executables for SplitsTree4 can be
+    found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
+
+5. Install matplotlib
+
+    Instructions can be found [here](https://matplotlib.org/users/installing.html).
+
+6. Run an analysis.
+
+   ```
+   crossvalidate -h
+   crossvalidate -i gipsy.myc -o out/
+   ```
+
+   It may be necessary to add to the PATH
+   ```
+   export PATH=$PATH:$HOME/bin
+   ```
 
 ## Running an analysis in a script 
 
