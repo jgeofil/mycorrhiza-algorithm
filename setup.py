@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mycorrhiza",
-    version="0.0.14",
+    version="0.0.15",
     author="Jeremy Georges-Filteau",
     author_email="jeremy.georges-filteau@mail.mcgill.ca",
     description="Mycorrhiza population assignment tools.",
@@ -17,13 +17,15 @@ setuptools.setup(
         'tqdm',
         'numpy',
         'scikit-learn',
-        'pathos'
+        'pathos',
+        'scipy',
+        'matplotlib'
     ],
     python_requires='>=3',
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'mycocv = mycorrhiza.scripts:mycocv',
+            'crossvalidate = mycorrhiza.scripts:crossvalidate',
             ]
     },
     classifiers=(

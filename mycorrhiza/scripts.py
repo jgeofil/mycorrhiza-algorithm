@@ -7,15 +7,15 @@ from mycorrhiza.plotting import mixture_plot
 from mycorrhiza.settings import const
 
 
-def mycocv():
+def crossvalidate():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-i', '--in-file', type=str, required=True, help='Path to the input data file.')
 	parser.add_argument('-o', '--out', type=str, required=True, help='Path to the output folder.')
-	parser.add_argument('-P', '--partitions', type=int, nargs=1, default=1, help='The number of partitions (default 1).')
-	parser.add_argument('-M', '--loci', type=int, nargs=1, default=0, help='The number of randomly selected loci (0 for all).')
-	parser.add_argument('-s', '--splits', type=int, nargs=1, default=5, help='The number of cross-validation splits (default 5).')
-	parser.add_argument('-e', '--estimators', type=int, nargs=1, default=60, help='Number of trees in the Random Forest classifier (default 60).')
-	parser.add_argument('-c', '--cores', type=int, nargs=1, default=1, help='The number of cores (default 1).')
+	parser.add_argument('-P', '--partitions', type=int, default=1, help='The number of partitions (default 1).')
+	parser.add_argument('-M', '--loci', type=int, default=0, help='The number of randomly selected loci (0 for all).')
+	parser.add_argument('-s', '--splits', type=int, default=5, help='The number of cross-validation splits (default 5).')
+	parser.add_argument('-e', '--estimators', type=int, default=60, help='Number of trees in the Random Forest classifier (default 60).')
+	parser.add_argument('-c', '--cores', type=int, default=1, help='The number of cores (default 1).')
 	parser.add_argument('-x', '--splitstree', type=str, default='SplitsTree', help='Path to the SplitsTree executable (default PATH).')
 	parser.add_argument('-f', '--format', type=str, default='myco', choices=['myco', 'struct'], help='Data file format (default myco).')
 

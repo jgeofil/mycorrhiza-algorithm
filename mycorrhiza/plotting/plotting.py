@@ -1,11 +1,18 @@
-from matplotlib import pyplot as plt
 from ..analysis import Result
 import numpy as np
+import os
 
 import warnings
 warnings.simplefilter(action='ignore', category=UserWarning)
 
+import matplotlib as mpl
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
+import matplotlib.pyplot as plt
+
 def mixture_plot(result: Result) -> None:
+
 
 	q_matrix = np.array(result.q_matrix)
 
@@ -46,7 +53,7 @@ def mixture_plot(result: Result) -> None:
 
 
 
-	plt.show()
+	#plt.show()
 
 
-	#plt.savefig('mixt', additional_artists=(lgd,), bbox_inches='tight')
+	plt.savefig(result._out_path+'/mixt.png', bbox_inches='tight')

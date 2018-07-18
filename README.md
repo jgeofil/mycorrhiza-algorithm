@@ -24,9 +24,9 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     Installation executables for SplitsTree4 can be 
     found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
 
-5. Install Matplotlib
+5. Install Anaconda
 
-    Instructions can be found [here](https://matplotlib.org/users/installing.html).
+    Instructions can be found [here](https://www.anaconda.com/download/).
 
 ## Running an analysis from command line
 
