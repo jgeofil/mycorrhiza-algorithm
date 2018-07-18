@@ -25,6 +25,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     For example, in a folder containing the input file gipsy.myc.
    
     ```bash
+    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -h
     docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
     ```
 
