@@ -65,7 +65,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
    It may be necessary to add to the PATH
    ```
-   export PATH=$PATH:$HOME/bin
+   export PATH=$PATH:$HOME/.local/bin
    ```
 
 ## Running an analysis in a script 
