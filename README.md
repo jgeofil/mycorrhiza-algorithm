@@ -11,14 +11,12 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 2. Install pip
 
-    ```bash
-    python -m pip install --upgrade pip setuptools wheel
-    ```
+   https://pip.pypa.io/en/stable/installing/
 
 3. Install Mycorrhiza
 
     ```bash
-    pip install --upgrade mycorrhiza
+    pip3 install --upgrade mycorrhiza
     ```
 
 4. Install SplitsTree
