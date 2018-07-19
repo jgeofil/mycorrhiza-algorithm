@@ -11,7 +11,7 @@ from pathos.multiprocessing import Pool
 from ..network.network import SplitNetwork
 from sklearn.model_selection import KFold
 from sklearn.ensemble import RandomForestClassifier
-
+import os
 
 class Result:
 
@@ -64,6 +64,9 @@ class Result:
 
 	def output_q(self, file_name: str='Q'):
 		out_file = path.join(self._out_path, '{0}.tsv'.format(file_name))
+
+		if os.path.isfile(out_file):
+			os.remove(out_file)
 
 		with open(out_file, 'w+') as fout:
 			fout.write('samples\t{0}\n'.format('\t'.join(self._q_pops)))
