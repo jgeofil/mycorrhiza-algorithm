@@ -5,14 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mycorrhiza",
-    version="0.0.16",
+    version="0.0.19",
     author="Jeremy Georges-Filteau",
     author_email="jeremy.georges-filteau@mail.mcgill.ca",
     description="Mycorrhiza population assignment tools.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/jgeofil/mycorrhiza",
-    packages=['mycorrhiza'],
+    packages=setuptools.find_packages(),
     install_requires=[
         'tqdm',
         'numpy',

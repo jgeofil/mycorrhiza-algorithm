@@ -33,7 +33,8 @@ class SplitNetwork:
 
 
 def bash_nexus_file(filename):
-	bash_command = '{0} -g -v -i {1}'.format(const['__SPLITSTREE_PATH__'], filename)
+
+	bash_command = '{0} -g -v -i {1}'.format(const['__SPLITSTREE_PATH__'], os.path.abspath(filename))
 
 	print(bash_command)
 
