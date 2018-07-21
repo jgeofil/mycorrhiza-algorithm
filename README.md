@@ -1,35 +1,6 @@
 # Mycorrhiza
 Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
 
-## Running an analysis from command line (OPTION 1)
-
-1. Install Docker
-
-   Instructions can be found [here](https://docs.docker.com/install/).
-1. (On linux, optional) [Give Docker root access](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
-
-2. Get the Mycorrhiza image.
-   
-   ```bash
-   docker pull jgeofil/mycorrhiza:latest
-   ```
-
-3. Run an analysis.
-    
-    Example data can be found [here](https://github.com/jgeofil/mycorrhiza/tree/master/examples/data).
-    
-    ```bash
-    docker run -v [WORKING DIRECTORY]:/temp/ mycorrhiza crossvalidate -i /temp/[INPUT FILE] -o /temp
-    ```
-   
-    For example, in a folder containing the input file gipsy.myc.
-   
-    ```bash
-    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -h
-    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
-    ```
-
-
 ## Running an analysis from command line (OPTION 2)
 
 1. Make sure you have the latest version of Python 3.x
@@ -73,30 +44,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 ### Installing Mycorrhiza with pip
 
-1. Make sure you have the latest version of Python 3.x
-
-    ```bash
-    python --version
-    ```
-
-2. Install pip
-
-   https://pip.pypa.io/en/stable/installing/
-
-3. Install Mycorrhiza
-
-    ```bash
-    pip3 install --upgrade mycorrhiza
-    ```
-
-4. Install SplitsTree
-
-    Installation executables for SplitsTree4 can be 
-    found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
-
-5. Install matplotlib
-
-    Instructions can be found [here](https://matplotlib.org/users/installing.html).
+Follow the instructions above to install Mycorrhiza.
 
 ### Running an analysis in a script
 
