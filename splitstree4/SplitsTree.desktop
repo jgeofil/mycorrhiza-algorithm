@@ -1,7 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=SplitsTree
-Exec="/home/jeremy/splitstree4/SplitsTree"
-Icon=/home/jeremy/splitstree4/.install4j/SplitsTree.png
-Categories=Application;

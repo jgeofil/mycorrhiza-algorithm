@@ -2,7 +2,7 @@
 import platform
 os_name = platform.system()
 
-linux_path = 'SplitsTree'
+linux_path = '~/splitstree4/SplitsTree'
 mac_path = '/Applications/SplitsTree/SplitsTree.app/Contents/MacOS/JavaApplicationStub'
 
 if os_name is 'Linux':
