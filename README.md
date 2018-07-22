@@ -1,52 +1,48 @@
 # Mycorrhiza
 Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
 
-## Running an analysis from command line (OPTION 2)
+## Installing Mycorrhiza on Ubuntu 16.04
 
 1. Make sure you have the latest version of Python 3.x
 
-    ```bash
-    python --version
-    ```
+    	```bash
+    	python3 --version
+    	```
+2. Install pip3, Java and the tkinter library
 
-2. Install pip
-
-   https://pip.pypa.io/en/stable/installing/
+	```bash
+    	sudo apt-get install python3-pip python3-tk default-jre
+    	```
+   	https://pip.pypa.io/en/stable/installing/
 
 3. Install Mycorrhiza
 
-    ```bash
-    pip3 install --upgrade mycorrhiza
-    ```
-
+    	```bash
+    	pip3 install --upgrade mycorrhiza
+    	```
 4. Install SplitsTree
 
-    Installation executables for SplitsTree4 can be
-    found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
+	```bash
+	wget http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_unix_4_14_6.sh
+    	chmod +x splitstree4_unix_4_14_6.sh
+	./splitstree4_unix_4_14_6.sh
+    	```
+	Follow the instructions in the GUI installer, leaving all settings to default.
+    
+## Running an analysis from command line
 
-5. Install matplotlib
+1. Run an analysis.
 
-    Instructions can be found [here](https://matplotlib.org/users/installing.html).
-
-6. Run an analysis.
-
-   ```
-   crossvalidate -h
-   crossvalidate -i gipsy.myc -o out/
-   ```
-
-   It may be necessary to add to the PATH
-   ```
-   export PATH=$PATH:$HOME/.local/bin
-   ```
+	```bash
+	crossvalidate -i gipsy.myc -o out/
+	```
+	
+	To see all available parameters:
+	```bash
+	crossvalidate -h
+	```
 
 ## Running an analysis in a script 
-
-### Installing Mycorrhiza with pip
-
-Follow the instructions above to install Mycorrhiza.
-
-### Running an analysis in a script
 
 1. Import the necessary modules.
     
@@ -55,12 +51,12 @@ Follow the instructions above to install Mycorrhiza.
     from mycorrhiza.analysis import CrossValidate
     from mycorrhiza.plotting.plotting import mixture_plot
     ```
-2. (Optional) By default Mycorrhiza will look for SplitStree in your PATH. 
+2. (Optional) By default Mycorrhiza will look for SplitStree in your home folder. 
 I you wish to specify a different path for the SplitsTree executable you can do so in the settings module.
 
     ```python
     from mycorrhiza.settings import const
-    const['__SPLITSTREE_PATH__'] = 'SplitsTree'
+    const['__SPLITSTREE_PATH__'] = '~/splitstree4/SplitsTree'
  
     ```
 3. Load some data. Here data is loaded in the Mycorrhiza format from the Gipsy moth sample data file.
