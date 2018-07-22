@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mycorrhiza",
-    version="0.0.21",
+    version="0.0.22",
     author="Jeremy Georges-Filteau",
     author_email="jeremy.georges-filteau@mail.mcgill.ca",
     description="Mycorrhiza population assignment tools.",

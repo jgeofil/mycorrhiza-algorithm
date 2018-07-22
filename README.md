@@ -29,7 +29,32 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ./splitstree4_unix_4_14_6.sh
     ```
 	Follow the instructions in the GUI installer, leaving all settings to default.
-    
+
+## Installing Mycorrhiza on Mac OS X Sierra 10.12
+
+1. If you don't already have the package manager HomeBrew, install it before proceeding.
+
+    ```bash
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    ```
+2. Install Python 3.x
+
+    ```bash
+    brew install python
+    ```
+
+3. Install Mycorrhiza
+
+    ```bash
+    sudo -H pip3 install --upgrade mycorrhiza
+    ```
+4. Install SplitsTree
+
+    The package can be found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_macos_4_14_6.dmg).
+    Follow the installer instructions, leaving all settings to default.
+
+
 ## Running an analysis from command line
 
 1. Run an analysis.
