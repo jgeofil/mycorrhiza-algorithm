@@ -5,42 +5,43 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 1. Make sure you have the latest version of Python 3.x
 
-    	```bash
-    	python3 --version
-    	```
+    ```bash
+    python3 --version
+    ```
+
 2. Install pip3, Java and the tkinter library
 
 	```bash
-    	sudo apt-get install python3-pip python3-tk default-jre
-    	```
-   	https://pip.pypa.io/en/stable/installing/
+    sudo apt-get install python3-pip python3-tk default-jre
+    ```
 
 3. Install Mycorrhiza
 
-    	```bash
-    	pip3 install --upgrade mycorrhiza
-    	```
+    ```bash
+    pip3 install --upgrade mycorrhiza
+    ```
+
 4. Install SplitsTree
 
 	```bash
-	wget http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_unix_4_14_6.sh
-    	chmod +x splitstree4_unix_4_14_6.sh
-	./splitstree4_unix_4_14_6.sh
-    	```
+    wget http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_unix_4_14_6.sh
+    chmod +x splitstree4_unix_4_14_6.sh
+    ./splitstree4_unix_4_14_6.sh
+    ```
 	Follow the instructions in the GUI installer, leaving all settings to default.
     
 ## Running an analysis from command line
 
 1. Run an analysis.
 
-	```bash
-	crossvalidate -i gipsy.myc -o out/
-	```
+    ```bash
+    crossvalidate -i gipsy.myc -o out/
+    ```
 	
-	To see all available parameters:
-	```bash
-	crossvalidate -h
-	```
+    To see all available parameters:
+    ```bash
+    crossvalidate -h
+    ```
 
 ## Running an analysis in a script 
 
