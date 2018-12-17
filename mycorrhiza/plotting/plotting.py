@@ -23,7 +23,7 @@ def mixture_plot(result: Result) -> None:
 
 	btm = np.zeros(q_matrix.shape[0])
 
-	fig = plt.figure(figsize=(15,5))
+	fig = plt.figure(figsize=((0.1*q_matrix.shape[0])+2,5))
 
 	ax = fig.add_axes([0.05, 0.1, 0.9, 0.7])
 
