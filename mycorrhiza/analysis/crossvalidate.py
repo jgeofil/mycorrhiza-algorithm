@@ -31,6 +31,7 @@ class CrossValidate(Result):
 		self.set_q(q, q_pops)
 
 		self.output_q()
+		self.output_accuracy()
 
 		return self
 

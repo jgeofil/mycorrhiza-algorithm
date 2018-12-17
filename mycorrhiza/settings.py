@@ -1,8 +1,10 @@
 
 import platform
+from pathlib import Path
+home = str(Path.home())
 os_name = platform.system()
 
-linux_path = '~/splitstree4/SplitsTree'
+linux_path = home+'/splitstree4/SplitsTree'
 mac_path = '/Applications/SplitsTree/SplitsTree.app/Contents/MacOS/JavaApplicationStub'
 
 if os_name == 'Linux':

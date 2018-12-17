@@ -11,6 +11,7 @@ from pathos.multiprocessing import Pool
 from ..network.network import SplitNetwork
 from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 import os
 from collections import Counter
 
@@ -77,6 +78,22 @@ class Result:
 			for iden, line in zip(self._dataset.identifiers, self.q_matrix):
 				fout.write('{0}\t{1}\n'.format(iden, '\t'.join(line.astype(str))))
 
+	def output_accuracy(self, file_name: str='acc'):
+		out_file = path.join(self._out_path, '{0}.tsv'.format(file_name))
+
+		if os.path.isfile(out_file):
+			os.remove(out_file)
+		
+		acc = accuracy_score(self.real_populations, self._pred_populations)
+		print('Accuracy: {0}\n'.format(acc))
+
+		with open(out_file, 'w+') as fout:
+			fout.write('Accuracy: {0}\n'.format(acc))
+			fout.write('####')
+			fout.write('samples\ttrue\tpred\n')
+			for iden, re, pr in zip(self._dataset.identifiers, self.real_populations, self._pred_populations):
+				fout.write('{0}\t{1}\t{2}\n'.format(iden, re, pr))
+
 
 def _as_nexus_file(data: Dataset, out_path, loci: list):
 
@@ -129,9 +146,9 @@ def _r_forests(partitions: list, populations: list, num_splits: int, num_estimat
 	kf = StratifiedKFold(n_splits=num_splits, shuffle=True)
 
 	counts = Counter(populations)
-	for key,value in counts:
-		if value < num_splits:
-			raise ValueError("Population {0} has less samples ({1}) than the number of splits ({2}).".format(key, value, num_splits))
+	for key in counts:
+		if counts[key] < num_splits:
+			raise ValueError("Population {0} has less samples ({1}) than the number of splits ({2}).".format(key, counts[key], num_splits))
 
 	populations = np.array(populations)
 

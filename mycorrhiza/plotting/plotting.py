@@ -16,7 +16,7 @@ def mixture_plot(result: Result) -> None:
 
 	q_matrix = np.array(result.q_matrix)
 
-	colors = plt.cm.terrain(np.linspace(0, 0.85, num=q_matrix.shape[1]))
+	colors = plt.cm.jet(np.linspace(0, 0.85, num=q_matrix.shape[1]))
 
 	ind = np.arange(q_matrix.shape[0])  # the x locations for the groups
 	width = 1
