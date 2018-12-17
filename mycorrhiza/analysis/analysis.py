@@ -9,13 +9,17 @@ from tqdm import tqdm
 import random
 from pathos.multiprocessing import Pool
 from ..network.network import SplitNetwork
-from sklearn.model_selection import KFold
+from sklearn.model_selection import StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
 import os
+from collections import Counter
 
 class Result:
 
 	def __init__(self, dataset: Dataset, out_path):
+
+		if not os.path.exists(out_path):
+			os.makedirs(out_path)
 
 		self._out_path = out_path
 		self._q_matrix = None
@@ -122,7 +126,12 @@ def _partition(data: Dataset, out_path, num_partitions: int, num_loci: int, num_
 
 
 def _r_forests(partitions: list, populations: list, num_splits: int, num_estimators: int, num_cores: int):
-	kf = KFold(n_splits=num_splits, shuffle=True)
+	kf = StratifiedKFold(n_splits=num_splits, shuffle=True)
+
+	counts = Counter(populations)
+	for key,value in counts:
+		if value < num_splits:
+			raise ValueError("Population {0} has less samples ({1}) than the number of splits ({2}).".format(key, value, num_splits))
 
 	populations = np.array(populations)
 
@@ -130,7 +139,7 @@ def _r_forests(partitions: list, populations: list, num_splits: int, num_estimat
 	mixture_estimate_out = []
 	ordering_out = []
 
-	for train, test in kf.split(partitions[0]):
+	for train, test in kf.split(partitions[0], y=populations):
 
 		mixture_estimates_per_partition = []
 		clf = RandomForestClassifier(n_estimators=num_estimators, verbose=True, n_jobs=num_cores)
