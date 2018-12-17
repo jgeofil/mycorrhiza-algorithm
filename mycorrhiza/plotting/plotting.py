@@ -16,14 +16,14 @@ def mixture_plot(result: Result) -> None:
 
 	q_matrix = np.array(result.q_matrix)
 
-	colors = plt.cm.jet(np.linspace(0, 0.85, num=q_matrix.shape[1]))
+	colors = plt.cm.jet(np.linspace(0, 1.0, num=q_matrix.shape[1]))
 
 	ind = np.arange(q_matrix.shape[0])  # the x locations for the groups
 	width = 1
 
 	btm = np.zeros(q_matrix.shape[0])
 
-	fig = plt.figure(figsize=(10,5))
+	fig = plt.figure(figsize=(15,5))
 
 	ax = fig.add_axes([0.05, 0.1, 0.9, 0.7])
 
