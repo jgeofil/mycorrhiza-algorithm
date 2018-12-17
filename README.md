@@ -1,46 +1,19 @@
 # Mycorrhiza
 Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
 
-## Running an analysis from command line (OPTION 1)
-
-1. Install Docker
-
-   Instructions can be found [here](https://docs.docker.com/install/).
-1. (On linux, optional) [Give Docker root access](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user).
-
-2. Get the Mycorrhiza image.
-   
-   ```bash
-   docker pull jgeofil/mycorrhiza:latest
-   ```
-
-3. Run an analysis.
-    
-    Example data can be found [here](https://github.com/jgeofil/mycorrhiza/tree/master/examples/data).
-    
-    ```bash
-    docker run -v [WORKING DIRECTORY]:/temp/ mycorrhiza crossvalidate -i /temp/[INPUT FILE] -o /temp
-    ```
-   
-    For example, in a folder containing the input file gipsy.myc.
-   
-    ```bash
-    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -h
-    docker run -v $PWD:/temp/ mycorrhiza crossvalidate -i /temp/gipsy.myc -o /temp
-    ```
-
-
-## Running an analysis from command line (OPTION 2)
+## Installing Mycorrhiza on Ubuntu 16.04
 
 1. Make sure you have the latest version of Python 3.x
 
     ```bash
-    python --version
+    python3 --version
     ```
 
-2. Install pip
+2. Install pip3, Java and the tkinter library
 
-   https://pip.pypa.io/en/stable/installing/
+	```bash
+    sudo apt-get install python3-pip python3-tk default-jre
+    ```
 
 3. Install Mycorrhiza
 
@@ -50,55 +23,52 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 4. Install SplitsTree
 
-    Installation executables for SplitsTree4 can be
-    found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
+	```bash
+    wget http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_unix_4_14_6.sh
+    chmod +x splitstree4_unix_4_14_6.sh
+    ./splitstree4_unix_4_14_6.sh
+    ```
+	Follow the instructions in the GUI installer, leaving all settings to default.
 
-5. Install matplotlib
+## Installing Mycorrhiza on Mac OS X Sierra 10.12
 
-    Instructions can be found [here](https://matplotlib.org/users/installing.html).
+1. If you don't already have the package manager HomeBrew, install it before proceeding.
 
-6. Run an analysis.
+    ```bash
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-   ```
-   crossvalidate -h
-   crossvalidate -i gipsy.myc -o out/
-   ```
+    ```
+2. Install Python 3.x
 
-   It may be necessary to add to the PATH
-   ```
-   export PATH=$PATH:$HOME/.local/bin
-   ```
+    ```bash
+    brew install python
+    ```
+
+3. Install Mycorrhiza
+
+    ```bash
+    sudo -H pip3 install --upgrade mycorrhiza
+    ```
+4. Install SplitsTree
+
+    The package can be found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_macos_4_14_6.dmg).
+    Follow the installer instructions, leaving all settings to default.
+
+
+## Running an analysis from command line
+
+1. Run an analysis.
+
+    ```bash
+    crossvalidate -i gipsy.myc -o out/
+    ```
+	
+    To see all available parameters:
+    ```bash
+    crossvalidate -h
+    ```
 
 ## Running an analysis in a script 
-
-### Installing Mycorrhiza with pip
-
-1. Make sure you have the latest version of Python 3.x
-
-    ```bash
-    python --version
-    ```
-
-2. Install pip
-
-   https://pip.pypa.io/en/stable/installing/
-
-3. Install Mycorrhiza
-
-    ```bash
-    pip3 install --upgrade mycorrhiza
-    ```
-
-4. Install SplitsTree
-
-    Installation executables for SplitsTree4 can be 
-    found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/welcome.html).
-
-5. Install matplotlib
-
-    Instructions can be found [here](https://matplotlib.org/users/installing.html).
-
-### Running an analysis in a script
 
 1. Import the necessary modules.
     
@@ -107,12 +77,12 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     from mycorrhiza.analysis import CrossValidate
     from mycorrhiza.plotting.plotting import mixture_plot
     ```
-2. (Optional) By default Mycorrhiza will look for SplitStree in your PATH. 
+2. (Optional) By default Mycorrhiza will look for SplitStree in your home folder. 
 I you wish to specify a different path for the SplitsTree executable you can do so in the settings module.
 
     ```python
     from mycorrhiza.settings import const
-    const['__SPLITSTREE_PATH__'] = 'SplitsTree'
+    const['__SPLITSTREE_PATH__'] = '~/splitstree4/SplitsTree'
  
     ```
 3. Load some data. Here data is loaded in the Mycorrhiza format from the Gipsy moth sample data file.

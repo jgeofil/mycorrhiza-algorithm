@@ -65,7 +65,7 @@ def writeFooter(f, commands, update=True, export=True, quit=True):
 	f.write('END; [st_Assumptions]\n\n')
 	f.write('begin SplitsTree;\n')
 	if update: f.write('\tUPDATE;\n')
-	if export: f.write('\tEXPORT FILE=' + f.name + ' REPLACE=yes;\n')
+	if export: f.write('\tEXPORT FILE=' + os.path.abspath(f.name) + ' REPLACE=yes;\n')
 	if quit: f.write('\tQUIT;\n')
 	f.write('end;\n')
 

@@ -16,11 +16,12 @@ def crossvalidate():
 	parser.add_argument('-s', '--splits', type=int, default=5, help='The number of cross-validation splits (default 5).')
 	parser.add_argument('-e', '--estimators', type=int, default=60, help='Number of trees in the Random Forest classifier (default 60).')
 	parser.add_argument('-c', '--cores', type=int, default=1, help='The number of cores (default 1).')
-	parser.add_argument('-x', '--splitstree', type=str, default='SplitsTree', help='Path to the SplitsTree executable (default PATH).')
+	parser.add_argument('-x', '--splitstree', type=str, default=None, help='Path to the SplitsTree executable (default PATH).')
 	parser.add_argument('-f', '--format', type=str, default='myco', choices=['myco', 'struct'], help='Data file format (default myco).')
 
 	args = parser.parse_args()
-	const['__SPLITSTREE_PATH__'] = args.splitstree
+	if args.splitstree is not None:
+		const['__SPLITSTREE_PATH__'] = args.splitstree
 
 	if args.format == 'myco':
 		myco = Myco(file_path=args.in_file)
