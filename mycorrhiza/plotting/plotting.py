@@ -48,7 +48,7 @@ def mixture_plot(result: Result, predictionOnly=False) -> None:
 	ax.set_ylim(0, 1)
 
 	ax.set_xticks(ind)
-	ax.set_xticklabels(identifiers, rotation=90, fontsize=5)
+	ax.set_xticklabels(identifiers, rotation=90, fontsize=7)
 
 
 	plt.legend(ncol=5,bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
