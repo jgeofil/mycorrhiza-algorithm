@@ -39,7 +39,8 @@ class Structure(Dataset):
 				geno_a = self._replace_missing(line_a[3+self._n_optional_cols:])
 				geno_b = self._replace_missing(line_b[3+self._n_optional_cols:]) if self._diploid else []
 
-				yield Sample(line_a[0], len(geno_a), population=line_a[1], known=bool(line_a[2])), geno_a + geno_b
+
+				yield Sample(line_a[0], len(geno_a), population=line_a[1], known=True if line_a[2] == "1" else False), geno_a + geno_b
 
 	def _replace_missing(self, l, f='N', t='-9'):
 		return [f if x == t else ['A', 'T', 'G', 'C'][int(x)] for x in l]

@@ -91,4 +91,7 @@ class Dataset:
 	def flags(self):
 		return [sample.flag for sample in self._samples]
 
+	def setSamplePopulation(self, index, population):
+		self._samples[index]._population = population
+
 

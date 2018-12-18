@@ -34,7 +34,15 @@ class Supervised(Result):
 		elif test is not None:
 			train = [i for i in range(self._dataset.num_samples) if i not in test]
 
-		print(train, test)
+		if len(train) == 0:
+			raise ValueError("Training set must contain at least one sample.")
+		if len(test) == 0:
+			raise ValueError("Prediction set must contain at least one sample.")
+
+		print("Found {0} training samples and {1} prediction samples.".format(len(train), len(test)))
+
+		for index in test:
+			self._dataset.setSamplePopulation(index, "ZZZ")
 
 		parts = _partition(self._dataset, self._out_path, n_partitions, n_loci, n_cores)
 		pred_pops, q, q_pops = _sup_r_forests(train, test, parts, self._dataset.populations, n_estimators, n_cores)

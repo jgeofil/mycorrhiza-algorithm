@@ -59,9 +59,17 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 1. Run an analysis.
 
+    Run a 5-fold crossvalidated analysis.
     ```bash
-    crossvalidate -i gipsy.myc -o out/
+    crossvalidate -i gipsy.myc -o out/ -s 5
     ```
+
+    Run a analysis with a training set and a prediction set. Samples with a learing flag = 1 will 
+    be used for training and predictions will be made on samples with a learning flag = 0.
+    ```bash
+    supervised -i gipsy.myc -o out/
+    ```
+
 	
     To see all available parameters:
     ```bash

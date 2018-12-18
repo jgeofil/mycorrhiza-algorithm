@@ -29,7 +29,7 @@ class Myco(Dataset):
 				geno_a = line_a[3:]
 				geno_b = line_b[3:] if self._diploid else []
 
-				yield Sample(line_a[0], len(geno_a), population=line_a[1], known=bool(line_a[2])), geno_a + geno_b
+				yield Sample(line_a[0], len(geno_a), population=line_a[1], known=True if line_a[2] == "1" else False), geno_a + geno_b
 
 
 if __name__ == '__main__':
