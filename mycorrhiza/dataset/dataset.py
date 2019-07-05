@@ -1,5 +1,5 @@
 from ..exceptions import LoadingError
-
+import numpy as np
 
 class Sample:
 
@@ -28,10 +28,11 @@ class Sample:
 
 class Dataset:
 
-	def __init__(self, file_path, diploid: bool=True):
+	def __init__(self, file_path, diploid: bool = True, is_str: bool = True):
 
 		self._file_path = file_path
 		self._diploid = diploid
+		self._is_str = is_str
 		self._samples = []
 		self._num_loci = None
 
@@ -80,6 +81,10 @@ class Dataset:
 		return self._diploid
 
 	@property
+	def is_str(self):
+		return self._is_str
+
+	@property
 	def populations(self):
 		return [sample.population for sample in self._samples]
 
@@ -94,4 +99,14 @@ class Dataset:
 	def setSamplePopulation(self, index, population):
 		self._samples[index]._population = population
 
+	def _microsatellite_distances(self):
+		matrix = np.array([x[1] for x in self._iterator()])
+		distances = np.zeros([matrix.shape[0]]*2)
 
+		for i in range(matrix.shape[0]):
+			for j in range(matrix.shape[0]):
+				vals = [1 if a != b else 0 for a, b in zip(matrix[i], matrix[j])
+						if a != '-9' and b != '-9' and a != '000' and b != '000']
+				distances[i, j] = sum(vals)/len(vals) if len(vals) != 0 else 0
+
+		return distances

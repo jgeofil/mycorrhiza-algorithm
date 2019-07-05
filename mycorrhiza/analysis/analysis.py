@@ -101,18 +101,21 @@ def _as_nexus_file(data: Dataset, out_path, loci: list):
 	temp_file = os.path.join(out_path, temp)
 
 	with open(temp_file, 'w+') as fp:
-		nexus.writeHeader(fp, 'SEQUENCES', data.num_samples)
-		nexus.start_characters_block(fp, len(loci))
+		nexus.writeHeader(fp, 'MYCORRHIZA', data.num_samples)
+		if data.is_str:
+			nexus.writeDistancesBlock(fp, data._microsatellite_distances(), data.identifiers)
+			nexus.writeFooter(fp, ['SplitsPostProcess filter=weight value=1E-6'])
+		else:
+			nexus.start_characters_block(fp, len(loci))
+			count = 0
+			with tqdm(total=data.num_samples, desc='Outputting data in Nexus format.') as progress:
+				for sample, genotype in data.iterator():
+					progress.update(1)
 
-		count = 0
-		with tqdm(total=data.num_samples, desc='Outputting data in Nexus format.') as progress:
-			for sample, genotype in data.iterator():
-				progress.update(1)
-
-				nexus.write_characters_line(fp, count, sample.identifier, np.array(genotype)[loci])
-				count += 1
-		nexus.end_block(fp)
-		nexus.writeFooter(fp, ['chartransform=JukesCantor', 'SplitsPostProcess filter=weight value=1E-6'])
+					nexus.write_characters_line(fp, count, sample.identifier, np.array(genotype)[loci])
+					count += 1
+			nexus.end_block(fp)
+			nexus.writeFooter(fp, ['chartransform=JukesCantor', 'SplitsPostProcess filter=weight value=1E-6'])
 
 	return temp_file
 

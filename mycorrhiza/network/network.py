@@ -1,5 +1,5 @@
 from ..dataset import nexus
-from ..settings import const
+from ..settings import const, os_name
 import subprocess
 import os
 import numpy as np
@@ -37,8 +37,7 @@ def bash_nexus_file(filename):
 	bash_command = '{0} -g -v -i {1}'.format(const['__SPLITSTREE_PATH__'], os.path.abspath(filename))
 
 	print(bash_command)
-
-	process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
+	process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE, shell=True if os_name == 'Windows' else False)
 	output, error = process.communicate()
 
 	if error:

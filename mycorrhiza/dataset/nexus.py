@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import re
+from ..settings import os_name
 
 
 def writeHeader(f, name, numTaxa):
@@ -64,9 +65,15 @@ def writeFooter(f, commands, update=True, export=True, quit=True):
 		f.write('\t' + c + ';\n')
 	f.write('END; [st_Assumptions]\n\n')
 	f.write('begin SplitsTree;\n')
-	if update: f.write('\tUPDATE;\n')
-	if export: f.write('\tEXPORT FILE=' + os.path.abspath(f.name) + ' REPLACE=yes;\n')
-	if quit: f.write('\tQUIT;\n')
+	if update:
+		f.write('\tUPDATE;\n')
+	if export:
+		export_name = os.path.abspath(f.name)
+		if os_name == 'Windows':
+			export_name = export_name.replace("\\", '\\\\')
+		f.write('\tEXPORT FILE=' + export_name + ' REPLACE=yes;\n')
+	if quit:
+		f.write('\tQUIT;\n')
 	f.write('end;\n')
 
 

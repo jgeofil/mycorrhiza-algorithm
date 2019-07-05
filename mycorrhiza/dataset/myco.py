@@ -8,11 +8,12 @@ class Myco(Dataset):
 	Args:
 		file_path (str): Path to the file containing the data.
 		diploid (bool): Dilpoid genotypes occupy 2 rows.
+		is_str: If data is microsatellites.
 	"""
 
-	def __init__(self, file_path, diploid: bool=True):
+	def __init__(self, file_path, diploid: bool = True, is_str: bool = False):
 
-		super().__init__(file_path, diploid)
+		super().__init__(file_path, diploid, is_str)
 
 	def _iterator(self):
 		with open(self._file_path) as fin:

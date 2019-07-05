@@ -4,10 +4,10 @@ from mycorrhiza.plotting import mixture_plot
 
 from mycorrhiza.settings import const
 
-
 def main():
 
-	myco = Myco(file_path='data/gipsy.myc')
+	myco = Myco(file_path='data/myco.myc', is_str=True)
+	myco = Structure(file_path='data/myco.str', is_str=True)
 	myco.load()
 
 	cv = CrossValidate(dataset=myco, out_path='data/')
