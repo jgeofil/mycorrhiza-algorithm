@@ -123,10 +123,10 @@ without partitioning.
 ## File formats
 For microsatellite loci set the is_str flag to True.
 
-```python
-data = Myco(file_path='data/myco.myc', is_str=True)
-data = Structure(file_path='data/myco.str', is_str=True)
-```
+    ```python
+    data = Myco(file_path='data/myco.myc', is_str=True)
+    data = Structure(file_path='data/myco.str', is_str=True)
+    ```
 
 ### Myco
 
@@ -139,6 +139,7 @@ Diploid genotypes occupy 2 rows (the sample identifier must be identical).
 | 3         | Learning flag     | {0,1}                      |
 | 4 to M+3  | SNP Loci	        | {A, T, G, C, N}            |
 | 4 to M+3  | STR Loci	        | any or 000                 |
+
 ### STRUCTURE
 
 Diploid genotypes occupy 2 rows (the sample identifier must be identical).
