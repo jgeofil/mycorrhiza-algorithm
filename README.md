@@ -11,7 +11,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
 2. Install pip3, Java and the tkinter library
 
-	```bash
+    ```bash
     sudo apt-get install python3-pip python3-tk default-jre
     ```
 
@@ -22,13 +22,13 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ```
 
 4. Install SplitsTree
-
-	```bash
+    
+    Follow the instructions in the GUI installer, leaving all settings to default.
+    ```bash
     wget http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_unix_4_14_6.sh
     chmod +x splitstree4_unix_4_14_6.sh
     ./splitstree4_unix_4_14_6.sh
     ```
-	Follow the instructions in the GUI installer, leaving all settings to default.
 
 ## Installing Mycorrhiza on Mac OS X Sierra 10.12
 
@@ -36,8 +36,9 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
     ```bash
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+    
     ```
+    
 2. Install Python 3.x
 
     ```bash
@@ -49,6 +50,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ```bash
     sudo -H pip3 install --upgrade mycorrhiza
     ```
+    
 4. Install SplitsTree
 
     The package can be found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_macos_4_14_6.dmg).
@@ -70,7 +72,6 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     supervised -i gipsy.myc -o out/
     ```
 
-	
     To see all available parameters:
     ```bash
     crossvalidate -h
@@ -85,6 +86,7 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     from mycorrhiza.analysis import CrossValidate
     from mycorrhiza.plotting.plotting import mixture_plot
     ```
+    
 2. (Optional) By default Mycorrhiza will look for SplitStree in your home folder. 
 I you wish to specify a different path for the SplitsTree executable you can do so in the settings module.
 

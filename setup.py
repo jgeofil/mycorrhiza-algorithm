@@ -1,7 +1,6 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+long_description = 'Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.'
 
 setuptools.setup(
     name="mycorrhiza",
