@@ -18,15 +18,16 @@ def crossvalidate():
 	parser.add_argument('-c', '--cores', type=int, default=1, help='The number of cores (default 1).')
 	parser.add_argument('-x', '--splitstree', type=str, default=None, help='Path to the SplitsTree executable (default PATH).')
 	parser.add_argument('-f', '--format', type=str, default='myco', choices=['myco', 'struct'], help='Data file format (default myco).')
+	parser.add_argument('-t', '--type', type=str, default='snp', choices=['snp', 'str'], help='SNP or microsatellite data.')
 
 	args = parser.parse_args()
 	if args.splitstree is not None:
 		const['__SPLITSTREE_PATH__'] = args.splitstree
 
 	if args.format == 'myco':
-		myco = Myco(file_path=args.in_file)
+		myco = Myco(file_path=args.in_file, is_str=True if args.type == 'str' else False)
 	elif args.format == 'struct':
-		myco = Structure(file_path=args.in_file)
+		myco = Structure(file_path=args.in_file, is_str=True if args.type == 'str' else False)
 	else:
 		raise ValueError('Invalid format.')
 	myco.load()
@@ -46,15 +47,16 @@ def supervised():
 	parser.add_argument('-c', '--cores', type=int, default=1, help='The number of cores (default 1).')
 	parser.add_argument('-x', '--splitstree', type=str, default=None, help='Path to the SplitsTree executable (default PATH).')
 	parser.add_argument('-f', '--format', type=str, default='myco', choices=['myco', 'struct'], help='Data file format (default myco).')
+	parser.add_argument('-t', '--type', type=str, default='snp', choices=['snp', 'str'], help='SNP or microsatellite data.')
 
 	args = parser.parse_args()
 	if args.splitstree is not None:
 		const['__SPLITSTREE_PATH__'] = args.splitstree
 
 	if args.format == 'myco':
-		myco = Myco(file_path=args.in_file)
+		myco = Myco(file_path=args.in_file, is_str=True if args.type == 'str' else False)
 	elif args.format == 'struct':
-		myco = Structure(file_path=args.in_file)
+		myco = Structure(file_path=args.in_file, is_str=True if args.type == 'str' else False)
 	else:
 		raise ValueError('Invalid format.')
 	myco.load()
