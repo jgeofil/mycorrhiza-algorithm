@@ -120,7 +120,7 @@ def vcf_to_structure(path_in: str, path_out: str, populations: list, diploid: bo
 								temp_genotypes_left[sample_index] += '\n'
 
 					if temp_count % _BUFFER_LEN == 0 and temp_count > 0:
-						temp_files_right, temp_genotypes_left = _flush(temp_files_right, temp_files_left,
+						temp_genotypes_right, temp_genotypes_left = _flush(temp_files_right, temp_files_left,
 																	   temp_genotypes_right, temp_genotypes_left)
 
 			_flush(temp_files_right, temp_files_left, temp_genotypes_right, temp_genotypes_left)
