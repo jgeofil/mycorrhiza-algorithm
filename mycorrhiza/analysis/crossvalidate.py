@@ -1,5 +1,7 @@
 from ..dataset.dataset import Dataset
-from .analysis import Result, _partition, _r_forests
+from ..dataset.helpers import _partition
+from .analysis import Result, _r_forests
+
 
 
 class CrossValidate(Result):

@@ -1,5 +1,6 @@
 from ..dataset.dataset import Dataset
-from .analysis import Result, _partition, _sup_r_forests
+from ..dataset.helpers import _partition
+from .analysis import Result, _sup_r_forests
 import numpy as np
 from typing import List
 
