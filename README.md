@@ -30,6 +30,9 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
     ./splitstree4_unix_4_14_6.sh
     ```
 
+    If the link above is not available - find the most recent version of the SplitsTree: 
+    http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download
+
 ## Installing Mycorrhiza on Mac OS X Sierra 10.12
 
 1. If you don't already have the package manager HomeBrew, install it before proceeding.
@@ -55,6 +58,9 @@ Combining phylogenetic networks and Random Forests for prediction of ancestry fr
 
     The package can be found [here](http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download/splitstree4_macos_4_14_6.dmg).
     Follow the installer instructions, leaving all settings to default.
+
+    If the link above is not available - find the most recent version of the SplitsTree: 
+    http://ab.inf.uni-tuebingen.de/data/software/splitstree4/download
 
 
 ## Running an analysis from command line
