@@ -61,7 +61,7 @@ def _write_line(source_file, out_pointer, identifier, population):
 		out_pointer.write('\n')
 
 
-def vcf_to_structure(path_in: str, path_out: str, populations: list, diploid: bool=True):
+def vcf_to_structure(path_in: str, path_out: str, populations: list=None, diploid: bool=True):
 	"""Converts a VCF file into the STRUCTURE format.
 
 	Args:
@@ -78,8 +78,12 @@ def vcf_to_structure(path_in: str, path_out: str, populations: list, diploid: bo
 
 	if len(identifiers) != len(np.unique(identifiers)):
 		raise LoadingError('Sample identifiers must be unique.')
-	if len(populations) != len(identifiers):
+	if populations == None:
+		populations = ['nan'] * len(identifiers) # in case of unlabeled vcf file
+	elif len(populations) != len(identifiers):
 		raise ValueError('Mismatch between the number of samples and populations labels.')
+	else:
+		pass
 
 	print('Opened VCF file with {0} samples and {1} loci.'.format(len(identifiers), num_loci))
 
@@ -120,7 +124,7 @@ def vcf_to_structure(path_in: str, path_out: str, populations: list, diploid: bo
 								temp_genotypes_left[sample_index] += '\n'
 
 					if temp_count % _BUFFER_LEN == 0 and temp_count > 0:
-						temp_files_right, temp_genotypes_left = _flush(temp_files_right, temp_files_left,
+						temp_genotypes_right, temp_genotypes_left = _flush(temp_files_right, temp_files_left,
 																	   temp_genotypes_right, temp_genotypes_left)
 
 			_flush(temp_files_right, temp_files_left, temp_genotypes_right, temp_genotypes_left)
