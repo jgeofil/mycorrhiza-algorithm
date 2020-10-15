@@ -1,5 +1,6 @@
-# Mycorrhiza
-Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
+# Mycorrhiza: Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data.
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=jgeofil&repo=Mycorrhiza-genotype-assignment-using-phylogenetic-networks)](https://github.com/jgeofil/Mycorrhiza-genotype-assignment-using-phylogenetic-networks)
 
 ## Installing Mycorrhiza on Ubuntu 16.04
 
