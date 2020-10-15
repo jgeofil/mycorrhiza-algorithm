@@ -1,5 +1,8 @@
 # Mycorrhiza algorithm
-*Publised in: Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data*
+*Publised in -Mycorrhiza: Combining phylogenetic networks and Random Forests for prediction of ancestry from multilocus genotype data*
+
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=jgeofil&repo=mycorrhiza-article-source)](https://github.com/jgeofil/mycorrhiza-article-source)
 
 ## Installing Mycorrhiza on Ubuntu 16.04
 
